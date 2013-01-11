@@ -71,6 +71,10 @@ sub has_installed_package {
     my $status = qx(dpkg --get-selections $package | awk '{print $print_arg}');
     chomp $status;
 
+    if (!$status) {
+        my $status = qx(dpkg --get-selections cpan-$package | awk '{print $print_arg}');
+    }
+
     return 1 if $status eq 'install';
 
     return undef;
