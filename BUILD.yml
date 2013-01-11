@@ -1,0 +1,29 @@
+# Author: Johan Sydseter <johan.sydseter@startsiden.no>
+---
+autoinstallver: 1
+name: vagrant-sydseter-debian-wheezy-amd64
+version: 13.02.01-01
+
+exludeext:
+  - .md
+  - .git
+  - .gitignore
+  - .gitmodules
+
+installto:
+  doc: /usr/share/doc/vagrant-sydseter-debian-wheezy-amd64
+  bin: /usr/local/bin
+
+depends:
+  - virtualbox
+  - vagrant
+
+excludedir:
+  - utils
+
+installdir: /usr/local/etc/vagrant-sydseter-debian-wheezy-amd64
+
+tests: t/
+test_requires:
+  - virtualbox
+  - vagrant
