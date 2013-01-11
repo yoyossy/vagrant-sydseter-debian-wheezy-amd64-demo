@@ -26,6 +26,9 @@ installdir: /usr/local/etc/vagrant-sydseter-debian-wheezy-amd64-demo
 
 tests: t/
 test_requires:
-  - virtualbox
-  - vagrant
-  - git
+  - sudo
+  - build-essential
+  - linux-headers-3.2.0.4-amd64
+  - virtualbox-guest-utils
+  - ssh
+  - libtest-bdd-cucumber-perl
