@@ -1,4 +1,4 @@
 #!/bin/sh
 vagrant up;
-sleep 10;
+sleep 1;
 vagrant halt;
