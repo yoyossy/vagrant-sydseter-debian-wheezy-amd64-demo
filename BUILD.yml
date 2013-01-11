@@ -1,7 +1,7 @@
 # Author: Johan Sydseter <johan.sydseter@startsiden.no>
 ---
 autoinstallver: 1
-name: vagrant-sydseter-debian-wheezy-amd64
+name: vagrant-sydseter-debian-wheezy-amd64-demo
 version: 13.02.01-01
 
 exludeext:
@@ -11,7 +11,7 @@ exludeext:
   - .gitmodules
 
 installto:
-  doc: /usr/share/doc/vagrant-sydseter-debian-wheezy-amd64
+  doc: /usr/share/doc/vagrant-sydseter-debian-wheezy-amd64-demo
   bin: /usr/local/bin
 
 depends:
@@ -22,7 +22,7 @@ depends:
 excludedir:
   - utils
 
-installdir: /usr/local/etc/vagrant-sydseter-debian-wheezy-amd64
+installdir: /usr/local/etc/vagrant-sydseter-debian-wheezy-amd64-demo
 
 tests: t/
 test_requires:
