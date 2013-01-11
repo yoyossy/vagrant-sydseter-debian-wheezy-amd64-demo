@@ -1,2 +1,4 @@
 #!/bin/sh
-vagrant up
+vagrant up;
+sleep 10;
+vagrant halt;
