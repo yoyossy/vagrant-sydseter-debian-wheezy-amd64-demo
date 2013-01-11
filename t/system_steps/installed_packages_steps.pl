@@ -71,8 +71,10 @@ sub has_installed_package {
     my $status = qx(dpkg --get-selections $package | awk '{print $print_arg}');
     chomp $status;
 
-    if (!($status eq 'install')) {
-        my $status = qx(dpkg --get-selections cpan-$package | awk '{print $print_arg}');
+    if ($status ne 'install') {
+        $status = qx(dpkg --get-selections cpan-$package | awk '{print $print_arg}');
+        chomp $status;
+
     }
 
     return 1 if $status eq 'install';
@@ -88,6 +90,12 @@ sub package_has_version {
   ok(1,"The actual version: ${actual_version}");
 
   chomp $actual_version;
+
+
+  if (!($actual_version =~ m/$version/)) {
+        $actual_version = qx(dpkg -l cpan-${package} | tail -n 1);
+        chomp $actual_version;
+  }
 
   if ( $actual_version =~ m/$version/) {
       return 1;
